@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import tailwindcss from "~/tailwind.css";
 
 export const meta = () => ({
   charset: "utf-8",
@@ -28,4 +29,8 @@ export default function App() {
       </body>
     </html>
   );
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: tailwindcss }];
 }
