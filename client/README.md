@@ -54,4 +54,15 @@ cp -R ../my-old-remix-app/app app
 
 ### Resources
 
+[Sanity Installation](https://www.sanity.io/docs/create-a-sanity-project)
 [Tailwind Installation](https://tailwindcss.com/docs/guides/remix)
+
+<p>Success! Now, use these commands to continue:</p>
+
+<p>First: cd <code>/Users/workbench/Development/code/repos/demos/remix-sanity-2023/client/app/sanity</code> - to enter project’s directory</p>
+<p>Then: npm run dev - to run Sanity Studio</p>
+
+<p>Other helpful commands</p>
+<p>sanity docs - to open the documentation in a browser</p>
+<p>sanity manage - to open the project settings in a browser</p>
+<p>sanity help - to explore the CLI manual</p>
