@@ -1,6 +1,6 @@
 # Remix Sanity 2023
 
-### Stack
+## Stack
 
 [React](https://react.dev)<br>
 [Remix](https://remix.run)<br>
@@ -13,8 +13,8 @@ cd <code>client/</code><br>
 run <code>npm run dev</code><br>
 browser url <code>localhost:3000</code><br>
 
-### Sanity Project
+### Sanity Studio
 
-cd <code>sanity/</code><br>
+cd <code>/app/sanity/</code><br>
 run <code>npm run dev</code><br>
 browser url <code>localhost:3333</code><br>
