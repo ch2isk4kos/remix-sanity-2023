@@ -1,10 +1,8 @@
-// ./app/lib/sanity.ts
-
 import { createClient } from "@sanity/client";
 import { definePreview } from "@sanity/preview-kit";
 
-// copy these from your Studio's sanity.config.ts
-export const projectId = "";
+// copy these from sanity/sanity.config.js
+export const projectId = "iuxtah7c";
 export const dataset = "production";
 export const apiVersion = "2023-01-01";
 
