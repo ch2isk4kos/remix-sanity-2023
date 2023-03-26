@@ -1,16 +1,21 @@
-import { PortableText } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
+import { PortableText } from "@portabletext/react";
 import { projectId, dataset } from "~/lib/sanity";
+// import toPlainText from "~/utils/sanity/toPlainText";
+import { toPlainText } from "@portabletext/react";
 
 const builder = imageUrlBuilder({ projectId, dataset });
 
 export default function Post({ post }) {
   const { title, mainImage, body } = post;
-  // console.log("post:", post);
-  console.log("body:", body);
+
+  const paragraphs = body.forEach(
+    (paragraph) => (paragraph.children[0].text += "\n")
+  );
 
   return (
-    <main className="container mx-auto prose prose-lg p-4">
+    // <main className="container mx-auto prose prose-lg p-4">
+    <main className="">
       {title ? <h1>{title}</h1> : null}
       {mainImage ? (
         <img
