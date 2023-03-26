@@ -6,6 +6,8 @@ const builder = imageUrlBuilder({ projectId, dataset });
 
 export default function Post({ post }) {
   const { title, mainImage, body } = post;
+  // console.log("post:", post);
+  console.log("body:", body);
 
   return (
     <main className="container mx-auto prose prose-lg p-4">
