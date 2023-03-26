@@ -7,6 +7,7 @@ const builder = imageUrlBuilder({ projectId, dataset });
 export default function Post({ post }) {
   const { title, mainImage, body } = post;
 
+  // add break line after each paragraph
   const paragraphs = body.forEach(
     (paragraph) => (paragraph.children[0].text += "\n")
   );
