@@ -9,15 +9,6 @@ export default function Post({ post }) {
   // console.log(post);
   const { title, mainImage, body } = post;
 
-  // add break line after each paragraph
-  // const paragraphs = body.forEach(
-  //   (paragraph) => (paragraph.children[0].text += "\n")
-  // );
-
-  // const components = {
-
-  // };
-
   return (
     // <main className="container mx-auto prose prose-lg p-4">
     <main className="">
@@ -37,7 +28,18 @@ export default function Post({ post }) {
         />
       ) : null}
       <div className="" style={{ border: "2px solid springGreen" }}>
-        {body ? <PortableText value={body} /> : null}
+        {body
+          ? body.map((paragraph) => (
+              <div
+                className="paragraphs"
+                key={paragraph.key}
+                style={{ border: "2px solid crimson" }}
+              >
+                <PortableText value={paragraph} />
+                <br />
+              </div>
+            ))
+          : null}
       </div>
     </main>
   );
