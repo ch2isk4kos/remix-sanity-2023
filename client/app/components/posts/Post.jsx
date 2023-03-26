@@ -6,13 +6,17 @@ import { projectId, dataset } from "~/lib/sanity";
 const builder = imageUrlBuilder({ projectId, dataset });
 
 export default function Post({ post }) {
-  console.log(post);
+  // console.log(post);
   const { title, mainImage, body } = post;
 
   // add break line after each paragraph
   // const paragraphs = body.forEach(
   //   (paragraph) => (paragraph.children[0].text += "\n")
   // );
+
+  // const components = {
+
+  // };
 
   return (
     // <main className="container mx-auto prose prose-lg p-4">
