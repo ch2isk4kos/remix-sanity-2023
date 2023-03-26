@@ -1,13 +1,28 @@
-import React, { useMemo } from "react";
+import React, { useState } from "react";
+import { projectId, dataset, client } from "~/lib/sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
-import { projectId, dataset } from "~/lib/sanity";
+import { useLoaderData } from "@remix-run/react";
 
 const builder = imageUrlBuilder({ projectId, dataset });
 
+export const loader = async () => {
+  const query = `*[_type == "author" && _ref == post.author_ref]{
+    name
+  }`;
+  const author = await client.fetch(query);
+  return { author };
+};
+
 export default function Post({ post }) {
   // console.log(post);
-  const { title, mainImage, body, publishedAt, author } = post;
+  const { title, mainImage, body, publishedAt } = post;
+
+  const timestamp = Date(publishedAt);
+  console.log("timestamp:", timestamp);
+
+  const { author } = useLoaderData();
+  console.log("author:", author);
 
   return (
     // <main className="container mx-auto prose prose-lg p-4">
@@ -33,9 +48,11 @@ export default function Post({ post }) {
           />
         ) : null}
       </header>
-      <div className="post-date">
-        {publishedAt ? <p>{publishedAt}</p> : null}
-      </div>
+      {/* Author */}
+      <div className="post-author">{author ? <p>{author}</p> : null}</div>
+      {/* Timestampe */}
+      <div className="post-date">{timestamp ? <p>{timestamp}</p> : null}</div>
+      {/* Paragraphs */}
       <div className="" style={{ border: "2px solid springGreen" }}>
         {body
           ? body.map((paragraph) => (
