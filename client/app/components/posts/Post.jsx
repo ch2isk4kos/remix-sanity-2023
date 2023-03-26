@@ -1,8 +1,6 @@
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import { projectId, dataset } from "~/lib/sanity";
-// import toPlainText from "~/utils/sanity/toPlainText";
-import { toPlainText } from "@portabletext/react";
 
 const builder = imageUrlBuilder({ projectId, dataset });
 
