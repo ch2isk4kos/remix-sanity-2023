@@ -6,7 +6,7 @@ import { projectId, dataset } from "~/lib/sanity";
 const builder = imageUrlBuilder({ projectId, dataset });
 
 export default function Post({ post }) {
-  console.log(post);
+  // console.log(post);
   const { title, mainImage, body, publishedAt, author } = post;
 
   return (
@@ -41,7 +41,7 @@ export default function Post({ post }) {
           ? body.map((paragraph) => (
               <div
                 className="paragraphs"
-                key={paragraph.key}
+                key={paragraph._key}
                 style={{ border: "2px solid crimson" }}
               >
                 <PortableText value={paragraph} />
