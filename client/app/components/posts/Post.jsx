@@ -13,6 +13,8 @@ export default function Post({ post }) {
   const { title, mainImage, body, publishedAt } = post;
   const timestamp = Date(publishedAt);
 
+  useEffect(() => {}, [slug]);
+
   return (
     // <main className="container mx-auto prose prose-lg p-4">
     <main className="Post">
