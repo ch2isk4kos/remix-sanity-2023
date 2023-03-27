@@ -13,7 +13,11 @@ export default function Post({ post }) {
   const { title, mainImage, body, publishedAt } = post;
   const timestamp = Date(publishedAt);
 
-  useEffect(() => {}, [slug]);
+  useEffect(() => {
+    const query = `*[slug.current == "${slug}"]{
+      "name": author->name
+    }`;
+  }, [slug]);
 
   return (
     // <main className="container mx-auto prose prose-lg p-4">
