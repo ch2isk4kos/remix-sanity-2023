@@ -17,6 +17,12 @@ export default function Post({ post }) {
     const query = `*[slug.current == "${slug}"]{
       "name": author->name
     }`;
+    client
+      .fetch(query)
+      .then((arr) => {
+        setAuthor(arr[0].name);
+      })
+      .catch((err) => console.log(err));
   }, [slug]);
 
   return (
