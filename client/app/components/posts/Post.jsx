@@ -9,6 +9,7 @@ const builder = imageUrlBuilder({ projectId, dataset });
 export default function Post({ post }) {
   // console.log(post);
   const [author, setAuthor] = useState("");
+  const { slug } = useParams();
   const { title, mainImage, body, publishedAt } = post;
   const timestamp = Date(publishedAt);
 
