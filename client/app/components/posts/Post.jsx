@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "@remix-run/react";
 import { projectId, dataset, client } from "~/lib/sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
