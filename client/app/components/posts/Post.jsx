@@ -52,7 +52,7 @@ export default function Post({ post }) {
           />
         ) : null}
       </header>
-      {/* Author */}
+      {/* Author Name */}
       <div className="post-author">{author ? <p>{author}</p> : null}</div>
       {/* Timestampe */}
       <div className="post-date">{timestamp ? <p>{timestamp}</p> : null}</div>
